@@ -1,0 +1,744 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{   
+    font-family: 'Poppins';
+}
+
+/*accueil*/
+.loader{   
+    position: fixed; 
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: url(../img/loader2.jpg) ;
+    background-size: cover;
+    z-index: 3;    
+}
+.loader h1 {    
+    max-width: 40ch;
+    text-align: center;
+    transform: scale(0.9);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+/*animation titre*/
+.loader span {
+  display: inline-block;
+  opacity: 0;
+  margin: 0 5px;
+  filter: blur(4px);
+  font-variant-caps: small-caps;
+  letter-spacing: 3px;
+}
+
+.loader span:nth-child(1) {
+  animation: fade-in 1s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.loader span:nth-child(2) {
+  animation: fade-in 1.2s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.loader span:nth-child(3) {
+  animation: fade-in 1.2s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes fade-in {
+    100% {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
+.loader img{
+    width: 15%;    
+}
+
+
+/* header */
+header{    
+    position: fixed;
+    display: flex;
+    justify-content: space-between;    
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-variant-caps: small-caps;
+    z-index: 1;
+}
+/* header partie gauche */
+#title{
+    display: flex;
+    align-items: center;
+}
+#title span a{
+    font-size: 2em;
+    text-decoration: none;
+    color: white;
+}
+
+#logo{
+    width: 50px;
+    padding: 5px;    
+}
+
+/* header partie droite */
+nav{
+    display: flex;
+    flex-direction:row;    
+    list-style-type: none;
+    align-items: center;
+}
+li{    
+    padding-right: 50px;
+}
+li a{    
+    color: rgb(215, 215, 215);
+    text-decoration: none;
+    font-size: 1.3em;
+    padding: 0 10px;
+    position: relative;
+}
+
+
+
+/*animation nav au passage de la souris*/
+li a:hover{
+       color: white;
+}
+
+li a:after{
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: -3px;
+    transition: 0.3s;
+}
+li a:hover:after{
+    width: 100%;    
+}
+
+/* image de fond */
+#slideshow-container{
+    max-width: 100%;
+    position: relative;
+    margin: auto;     
+}
+#slideshow-container img{
+    max-height: 100vh;
+}
+.mySlides img{
+    width: 100%;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+/* section projet    */
+
+#projects-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background: url(../img/projects-bg.jpg) ;
+    background-size: 100%;    
+}
+
+#projects-container h1{    
+    padding-top: 50px; 
+    text-align: center;
+    font-variant-caps: small-caps;
+    font-size: 2.5em;       
+    color: #fff;
+    font-weight: 600;    
+}
+.projects{    
+    position: relative;
+    display: flex;    
+    justify-content: center;       
+    align-items: center;  
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 50px;
+}
+.projects .card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 600px;
+    height: 450px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+    transition: 0.5s;
+}
+.projects .card:hover{
+    height: 550px;
+}
+.projects .card .imgBx{
+    position: absolute;
+    top: 20px;
+    width: 550px;
+    height: 350px;
+    background: #333;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: 0.5s;
+}
+.projects .card:hover .imgBx{
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+.projects .card .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.projects .card .content{
+    position: absolute;
+    top: 385px;
+    width: 100%;
+    padding: 0 30px;    
+    height: 40px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.5s;
+}
+.projects .card:hover .content{
+    top: 250px;
+    height: 280px;    
+}
+
+.projects .card .content h2{
+    font-family: 'Parisienne', cursive;;
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--clr);
+}
+.projects .card .content p{
+    padding: 0 30px;
+    text-align: justify;
+}
+
+.projects .card .content a{
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--clr);
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* expertise */
+#skills-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background: url(../img/skills-bg.jpg);
+    background-size: cover ;
+    background-position: center;
+}
+#skills-container .skills-title{    
+    width: 100%;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 500;
+    color: white;
+}
+.skillbox{
+    position: relative;
+    top: -120px;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+}
+.skillbox .skillcard{
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    width: 300px;
+    min-height: 400px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.75);
+    border-left: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05) ;
+    transform-style: preserve-3d;
+}
+.elements{
+    position: absolute;
+    top: 50px;
+    left: -30px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateZ(80px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.75);
+    border-left: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05) ;
+}
+.elements.bg::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(../img/skills-icon.png);
+    background-size: 75px;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+.skillbox:hover .elements.bg::before{
+    opacity: 1;
+}
+
+.elements.imgBx-skills{
+    top: 0;
+    left: initial;
+    right: 60px;
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    transform: translateZ(120px);
+}
+.elements.imgBx-skills img{
+    position: absolute;
+    width: calc(100% - 20px);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.75);
+    border-left: 1px solid rgba(255, 255, 255, 0.75);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05) ;
+    opacity: 0;
+    transition: 0.5s;
+}
+.skillbox:hover .elements.imgBx-skills img{
+    opacity: 1;
+}
+.elements.name{
+    top: 235px;  
+    left: initial;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+    transform: translateZ(180px);
+    background: transparent;
+    backdrop-filter: blur(0px);
+    border: none;
+    box-shadow: none;
+    color: #644651;
+    transition: 0.5s;
+    transition-delay: 0.25s;
+    opacity: 0;
+}
+.skillbox:hover .elements.name{
+    top: 150px;
+    opacity: 1;
+}
+.elements.content{
+    top: initial;
+    left: initial;
+    bottom: 0;
+    right: -20px;
+    width: 80%;
+    min-height: 180px;
+    padding: 10px;
+    transform: translateZ(180px);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.elements.content p{
+    position: relative;
+    color: #644651;
+    font-size: 0.85em;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    opacity: 0;
+}
+.skillbox:hover .elements.content p{
+    opacity: 1;
+}
+
+
+
+
+/*profil */
+#profile-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background: url(../img/profile-bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#profile-container .profile-title{
+    position: absolute;
+    top: 80px;     
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 2em;   
+}
+.profile-card{
+    position: relative;     
+    width: 400px;
+    height: 450px;
+    background: rgb(0, 0, 0);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+.profile-card:hover{
+    width: 800px;
+}
+
+.profile-card .profile-imgBx{
+    position: relative;
+    min-width: 400px;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 2;
+}
+.profile-card .profile-imgBx img{
+    max-width: 330px;
+    transition: 0.5s ease-in-out;
+}   
+.profile-card:hover .profile-imgBx img{
+    transform: rotate(-35deg) translateX(-20px);
+}
+
+.profile-card .profile-details{
+    position: absolute;
+    left: 0;
+    min-width: 400px;
+    height: 100%;
+    background: #4ba9e9;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;    
+    padding: 20px;
+    z-index: 1;
+    transition: 0.5s ease-in-out;
+}
+.profile-card:hover .profile-details{
+    left: 400px;
+}
+
+.profile-card .profile-details::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #fff;
+}
+.profile-card .profile-details h3{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5em;
+    line-height: 1em;
+}
+.profile-card .profile-details h4{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    line-height: 1em;
+}
+.profile-card .profile-details p{
+    color: #fff;
+    opacity: 0.85;
+    font-size: 0.8em;
+}
+
+/*contact */
+#contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../img/contact-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.contact-container{
+    padding: 40px;
+    border-radius: 20px;
+    border: 8px solid #223243;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35), 
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1), 
+    inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(5px);
+}
+.contact-container .form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;   
+}
+.contact-container .form.signin,
+.contact-container.signinForm .form.signup{
+    display: none;
+}
+.contact-container.signinForm .form.signin{
+    display: flex;
+}
+
+.contact-container .form h2{
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+.contact-container .form .inputBox{
+    position: relative;
+    width: 300px;
+    margin: 15px 0;
+}
+.contact-container .form.signup .inputBox h3{
+    color: #fff;    
+}
+.contact-container .form.signup #adresse{
+   padding-bottom: 15px;
+}
+.contact-container .form .inputBox h3{
+    position: absolute;
+    left: 0;
+    padding: 12px 10px 12px 48px;
+    pointer-events: none;
+    font-size: 1em;
+    font-weight: 500;
+    transition: 0.5s;
+    letter-spacing: 0.05em;
+    color: rgb(0, 0, 0);
+}
+.contact-container .form .inputBox input{
+    padding: 12px 10px 12px 48px;
+    border: none;
+    width: 100%;
+    background: #223243;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-weight: 300;
+    border-radius: 25px;
+    font-size: 1em;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35);
+    transition: 0.5s;
+    outline: none;
+}
+.contact-container .form .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 12px 10px 12px 48px;
+    pointer-events: none;
+    font-size: 1em;
+    font-weight: 300;
+    transition: 0.5s;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.5);
+}
+.contact-container .form .inputBox input:valid ~ span, 
+.contact-container .form .inputBox input:focus ~ span,
+.contact-container .form .inputBox textarea:invalid ~ span,
+.contact-container .form .inputBox textarea:focus ~ span
+{
+    color: #00dfc4;
+    border: 1px solid #00dfc4;
+    background: #223243;
+    transform: translateX(25px) translateY(-7px);
+    font-size: 0.6em;
+    padding: 0 8px;
+    border-radius: 10px;
+    letter-spacing: 0.1em;
+}
+.contact-container .form .inputBox input:valid, 
+.contact-container .form .inputBox input:focus{
+    border: 1px solid #00dfc4;
+}
+.contact-container .form .inputBox i{
+    position: absolute;
+    top: 15px;
+    left: 16px;
+    width: 25px;    
+    padding: 2px 0;
+    padding-right: 8px;
+    color: #00dfc4;
+    border-right: 1px solid #00dfc4;
+}
+.contact-container .form .inputBox textarea{
+    padding: 12px 10px 12px 48px;
+    border: none;
+    width: 100%;
+    background: #223243;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-weight: 300;
+    border-radius: 25px;
+    font-size: 1.3em;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35);
+    transition: 0.5s;
+    outline: none;    
+}
+
+.contact-container .form .inputBox input[type="submit"]{
+    background: #00dfc4;
+    color: #223243;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35), 
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1), 
+    inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+}
+.contact-container .form p{
+    color: #fff;
+    font-size: 0.75em;
+    font-weight: 300;
+    padding-top: 15px;
+}
+.contact-container .form p a{
+    font-weight: 500;
+    color: #fff;
+}
+
+@media screen and (max-width:800px){
+    header #title{
+            align-items: center;
+        font-size: 0.7em; 
+    } 
+    header li{
+        padding-right: 20px;
+    }  
+    #slideshow-container{
+        min-width: 100vh;        
+        background-position: center;       
+    }
+
+    #skills-container{
+        flex-direction: column;
+    }
+    #skills-container .skills-title h1{
+        margin-top: 80px;
+        font-size: 0.8em;
+    }
+    .skillbox{
+        top: 0;
+        margin-top: 100px;
+    } 
+    .profile-card{
+        width: 300px;
+        height: 350px;
+    }
+    
+    .profile-card:hover{
+        width: 600px;
+    }
+    .profile-card .profile-imgBx{
+        min-width: 300px;
+    }
+    .profile-card .profile-imgBx img{
+        max-width: 250px;
+    }
+    .profile-card .profile-details{
+        min-width: 300px;
+    }
+    .profile-card:hover .profile-details{
+        left: 300px;
+    }
+ }
+ @media screen and (max-width:450px){
+    header #title span{
+        display: none;
+    }
+    header li{
+        padding-right: 0;
+    }
+    header li a{
+        font-size: 1.2em;
+    }
+    #projects-container h1{
+        font-size: 1.5em;
+    }
+    .projects .card{
+        margin-top: 30px;
+        width: 350px;
+        height: 450px;
+    }
+    .projects .card .imgBx{
+        width: 300px;
+        height: 350px;
+    }
+    #skills-container .skills-title h1{
+        margin-top: 80px;
+        font-size: 0.7em;
+    }
+    .profile-title h2{
+        font-size: 1.2em;
+    }
+    .profile-card{
+        flex-direction: column;
+    }
+    .profile-card:hover{
+        width: 300px;
+        height: 350px;
+    }
+    .profile-card:hover .profile-details{
+        left: 0;
+        z-index: 3;
+    }
+ } 

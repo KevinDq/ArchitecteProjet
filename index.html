@@ -9,15 +9,15 @@
     <title>Emilie Kinnoo Architecte</title>
 </head>
 <body>
-
-    <div class="loader">
-      <h1><span>Emilie</span><span>Kinnoo</span><span>Architecte</span>   </h1>
+    <!-- Accueil -->
+    <article class="loader">
+      <h1><span>Emilie</span><span>Kinnoo</span><span>Architecte</span></h1>
       <img src="./img/logo.png" alt="">
-    </div>
-
+    </article>
+    <!-- En-tête -->
     <header>
         <article id="title">
-            <a href="#slideshow-container"><img id="logo" src="./img/logo.png" alt=""></a>
+            <a href="#slideshow-container"><img id="logo" src="./img/logo_white.png" alt=""></a>
             <span><a href="#slideshow-container">Emilie Kinnoo Architecte</a> </span>
         </article>        
         <nav>            
@@ -27,7 +27,7 @@
                 <li><a href="#contact">Contact</a></li>            
         </nav>
     </header>
-
+    <!-- Gallerie défilante -->
     <section id="slideshow-container">
         <div class="mySlides fade">            
             <img src="./img/slide1.jpg">            
@@ -41,6 +41,7 @@
         </div>    
     </section>
 
+    <!-- Section Projets -->
     <section id="projects-container">        
       <h1>Ce que j'ai réalisé</h1>
       <article class="projects"> 
@@ -51,7 +52,7 @@
           <article class="content">
             <h2>Mon projet 1</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo ducimus, obcaecati accusamus, non quibusdam eum earum vitae quas ut repellat minus.</p>
-            <a href="">Voir plus</a>            
+            <a href="./pages/projet1.html">Voir plus</a>            
           </article>
         </article>        
         <article class="card" style="--clr: #ff3e7f;">
@@ -61,7 +62,7 @@
           <article class="content">
             <h2>Mon projet 2</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum consequuntur consectetur mollitia expedita nam voluptatibus impedit aspernatur?</p>
-            <a href="">Voir plus</a>
+            <a href="./pages/projet2.html">Voir plus</a>
           </article>
         </article>
         <article class="card" style="--clr: #03a9f4;">
@@ -71,22 +72,23 @@
           <article class="content">
             <h2>Mon projet 3</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum consequuntur consectetur mollitia expedita nam voluptatibus impedit aspernatur?</p>
-            <a href="">Voir plus</a>
+            <a href="./pages/projet3.html">Voir plus</a>
           </article>
         </article> 
         <article class="card" style="--clr: #f4b403;">
           <article class="imgBx">
-            <img src="./img/projet3_1.jpg" alt="" srcset="">
+            <img src="./img/projet4_1.jpg" alt="" srcset="">
           </article>
           <article class="content">
             <h2>Mon projet 4</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum consequuntur consectetur mollitia expedita nam voluptatibus impedit aspernatur?</p>
-            <a href="">Voir plus</a>
+            <a href="./pages/projet4.html">Voir plus</a>
           </article>
         </article>           
       </article>           
     </section>
 
+    <!-- Section expertise  -->
     <section id="skills-container">
       <article class="skills-title">
         <h1>Ce que je sais faire :</h1> 
@@ -145,6 +147,7 @@
       </article>      
     </section>
 
+    <!-- Section profil  -->
     <section id="profile-container"> 
       <article class="profile-title">
         <h2>Qui je suis</h2>
@@ -156,11 +159,13 @@
         <article class="profile-details">
           <h3>Emilie Kinnoo</h3>
           <h4>Architecte libéral</h4>          
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos expedita fugit dolores quas, placeat ut similique deleniti dolorum aliquid eaque blanditiis minima reprehenderit laboriosam qui illum consequuntur ex magnam est?</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos expedita fugit dolores quas, placeat ut similique deleniti dolorum aliquid eaque blanditiis minima reprehenderit laboriosam qui illum consequuntur ex magnam est?</p>          
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus nesciunt sunt dolores itaque possimus deleniti nobis saepe in amet minima sint inventore, voluptatem rerum non doloribus et suscipit? Vero, illum.</p>
         </article>
       </article>      
     </section>
 
+    <!-- Section contact  -->
     <section id="contact">  
       <article class="contact-container">
        <article class="form signup">
@@ -180,7 +185,7 @@
          <p>M'envoyer un message : <a href="#contact" class="login">C'est ici</a></p>
        </article>
        <article class="form signin">
-         <h2>Sign in</h2>
+         <h2>Envoyer un message</h2>
          <form method="POST" action="mail.php">
             <article class="inputBox">
              <input type="text" name="name" id="name" required="required">
@@ -205,12 +210,12 @@
              <article class="inputBox">
              <input type="submit" value="Envoyer">                
             </article>
-            <p>Pour revoir les moyens de me contacter : <a href="#contact" class="create">C'est ici</a></p>   
+            <p>Moyens de me contacter : <a href="#contact" class="create">C'est ici</a></p>   
           </form>        
         </article>
       </article>   
     </section>
-
+    
     <script src="./js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js" integrity="sha512-RX/OFugt/bkgwRQg4B22KYE79dQhwaPp2IZaA/YyU3GMo/qY7GrXkiG6Dvvwnds6/DefCfwPTgCXnaC6nAgVYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>

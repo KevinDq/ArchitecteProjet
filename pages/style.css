@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{   
+    font-family: 'Poppins';
+    background-color:rgb(0, 119, 119);
+    height: 100vh;
+}
+/* header */
+header{    
+    position: fixed;
+    display: flex;
+    justify-content: space-between;    
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-variant-caps: small-caps;
+    z-index: 1;
+}
+/* header partie gauche */
+#title{
+    display: flex;
+    align-items: center;
+}
+#title span a{
+    font-size: 2em;
+    text-decoration: none;
+    color: white;
+}
+
+#logo{
+    width: 50px;
+    padding: 5px;    
+}
+
+/* header partie droite */
+nav{
+    display: flex;
+    flex-direction:row;    
+    list-style-type: none;
+    align-items: center;
+}
+li{    
+    padding-right: 50px;
+}
+li a{    
+    color: rgb(215, 215, 215);
+    text-decoration: none;
+    font-size: 1.3em;
+    padding: 0 10px;
+    position: relative;
+}
+/*animation nav au passage de la souris*/
+li a:hover{
+       color: white;
+}
+
+li a:after{
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: -3px;
+    transition: 0.3s;
+}
+li a:hover:after{
+    width: 100%;    
+}
+
+/*projet */
+#project-container {
+    position: absolute;
+    margin-top: 50px;
+}
+.project{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;      
+}
+.left-picture{
+    flex-basis: 45%;
+    height: 50vh;    
+}
+.left-picture img{
+    width: 100%;
+    height: 100%;   
+}
+.text-box{
+    flex-basis: 55%;
+    padding: 40px;
+    background-color: white;    
+}
+.text-box h1{
+    text-align: center;    
+    font-weight: 500;
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    font-variant-caps: small-caps;
+}
+.text-box p{
+    text-align: justify;
+    margin-bottom: 20px;
+}
+.bottom-picture{
+width: 100%;
+height: 50vh;
+display: flex;
+}
+.bottom-picture img{
+    width: 100%;
+    height: 80%;
+}
+
+@media screen and (max-width:900px) {    
+    .project{
+        flex-direction: column;
+    }
+    .bottom-picture{
+        flex-direction: column;
+        height: 100%;
+    }
+}
+@media screen and (max-width:630px){
+    #title span a{
+        font-size: 1.2em;
+    }
+    li a{
+        font-size: 1em;
+    }
+}
+@media screen and (max-width:450px){
+    header{
+        justify-content: space-evenly;
+    }
+    #title span a{
+        display: none;
+    }
+    li a{
+        font-size: 1.2em;
+    }
+    .text-box h1{
+        font-size: 1.1em;
+    }
+    .text-box p{
+        font-size: 0.9em;
+    }
+}

@@ -45,41 +45,36 @@ body{
   font-variant-caps: small-caps;
   letter-spacing: 3px;
 }
-
 .loader span:nth-child(1) {
   animation: fade-in 1s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
-
 .loader span:nth-child(2) {
   animation: fade-in 1.2s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
-
 .loader span:nth-child(3) {
   animation: fade-in 1.2s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
-
 @keyframes fade-in {
     100% {
       opacity: 1;
       filter: blur(0);
     }
   }
-
 .loader img{
     width: 15%;    
 }
-
-
+/**/
 /* header */
+/**/
 header{    
     position: fixed;
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;      
     width: 100%;
     height: 50px;
     background-color: rgba(0, 0, 0, 0.5);
     font-variant-caps: small-caps;
-    z-index: 1;
+    z-index: 3;
 }
 /* header partie gauche */
 #title{
@@ -91,12 +86,10 @@ header{
     text-decoration: none;
     color: white;
 }
-
 #logo{
     width: 50px;
     padding: 5px;    
 }
-
 /* header partie droite */
 nav{
     display: flex;
@@ -114,9 +107,6 @@ li a{
     padding: 0 10px;
     position: relative;
 }
-
-
-
 /*animation nav au passage de la souris*/
 li a:hover{
        color: white;
@@ -159,9 +149,9 @@ li a:hover:after{
     from {opacity: .4} 
     to {opacity: 1}
   }
-
+/**/
 /* section projet    */
-
+/**/
 #projects-container{
     position: relative;
     display: flex;
@@ -172,7 +162,6 @@ li a:hover:after{
     background: url(../img/projects-bg.jpg) ;
     background-size: 100%;    
 }
-
 #projects-container h1{    
     padding-top: 50px; 
     text-align: center;
@@ -190,6 +179,7 @@ li a:hover:after{
     gap: 50px;
     padding: 50px;
 }
+/*Carte projet*/
 .projects .card{
     position: relative;
     display: flex;
@@ -205,6 +195,7 @@ li a:hover:after{
 .projects .card:hover{
     height: 550px;
 }
+/*Carte projet image*/
 .projects .card .imgBx{
     position: absolute;
     top: 20px;
@@ -228,6 +219,7 @@ li a:hover:after{
     height: 100%;
     object-fit: cover;
 }
+/*Carte projet texte*/
 .projects .card .content{
     position: absolute;
     top: 385px;
@@ -242,7 +234,6 @@ li a:hover:after{
     top: 250px;
     height: 280px;    
 }
-
 .projects .card .content h2{
     font-family: 'Parisienne', cursive;;
     font-size: 1.6em;
@@ -253,7 +244,6 @@ li a:hover:after{
     padding: 0 30px;
     text-align: justify;
 }
-
 .projects .card .content a{
     position: relative;
     top: 15px;
@@ -265,8 +255,9 @@ li a:hover:after{
     text-decoration: none;
     border-radius: 8px;
 }
-
-/* expertise */
+/**/
+/* section expertise */
+/**/
 #skills-container{
     display: flex;
     justify-content: space-around;
@@ -284,6 +275,7 @@ li a:hover:after{
     font-weight: 500;
     color: white;
 }
+/* Carte compétence */
 .skillbox{
     position: relative;
     top: -120px;
@@ -295,10 +287,12 @@ li a:hover:after{
     background: rgba(255, 255, 255, 0.1);
     width: 300px;
     min-height: 400px;
-    backdrop-filter: blur(10px);
+    /* glassmorphism */
+    backdrop-filter: blur(10px); 
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.75);
     border-left: 1px solid rgba(255, 255, 255, 0.75);
+    /**/
     border-radius: 20px;
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05) ;
     transform-style: preserve-3d;
@@ -332,7 +326,6 @@ li a:hover:after{
 .skillbox:hover .elements.bg::before{
     opacity: 1;
 }
-
 .elements.imgBx-skills{
     top: 0;
     left: initial;
@@ -402,11 +395,9 @@ li a:hover:after{
 .skillbox:hover .elements.content p{
     opacity: 1;
 }
-
-
-
-
+/**/
 /*profil */
+/**/
 #profile-container{
     position: relative;
     display: flex;
@@ -427,43 +418,44 @@ li a:hover:after{
 }
 .profile-card{
     position: relative;     
-    width: 400px;
-    height: 450px;
-    background: rgb(0, 0, 0);
+    width: 500px;
+    height: 550px;    
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
     display: flex;
     overflow: hidden;
     transition: 0.5s ease-in-out;
+    border-radius: 20px;
 }
 .profile-card:hover{
-    width: 800px;
+    width: 1000px;
 }
-
 .profile-card .profile-imgBx{
     position: relative;
-    min-width: 400px;
-    height: 100%;
-    background: #fff;
+    min-width: 500px;
+    height: 100%;    
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    z-index: 2;
+    z-index: 2;    
 }
 .profile-card .profile-imgBx img{
-    max-width: 330px;
+    max-width: 500px;
     transition: 0.5s ease-in-out;
 }   
 .profile-card:hover .profile-imgBx img{
     transform: rotate(-35deg) translateX(-20px);
 }
-
 .profile-card .profile-details{
     position: absolute;
     left: 0;
     min-width: 400px;
     height: 100%;
-    background: #4ba9e9;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );   
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
     display: flex;
     justify-content: center;
     flex-direction: column;    
@@ -472,42 +464,32 @@ li a:hover:after{
     transition: 0.5s ease-in-out;
 }
 .profile-card:hover .profile-details{
-    left: 400px;
-}
-
-.profile-card .profile-details::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid #fff;
+    left: 500px;
 }
 .profile-card .profile-details h3{
-    color: #fff;
+    color: #000000ad;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 1.5em;
+    font-size: 1.8em;
     line-height: 1em;
 }
 .profile-card .profile-details h4{
-    color: #fff;
+    color: #000000ad;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 0.9em;
+    font-size: 1.3em;
     margin-top: 20px;
     margin-bottom: 10px;
     line-height: 1em;
 }
 .profile-card .profile-details p{
-    color: #fff;
+    color: #000000;
     opacity: 0.85;
-    font-size: 0.8em;
+    font-size: 1em;
 }
-
+/**/
 /*contact */
+/**/
 #contact{
     display: flex;
     justify-content: center;
@@ -646,16 +628,19 @@ li a:hover:after{
     inset 5px 5px 15px rgba(0, 0, 0, 0.35);
 }
 .contact-container .form p{
+    text-align: center;
     color: #fff;
     font-size: 0.75em;
     font-weight: 300;
     padding-top: 15px;
 }
-.contact-container .form p a{
+.contact-container .form p a{    
     font-weight: 500;
     color: #fff;
 }
-
+/**/
+/*media queries*/
+/**/
 @media screen and (max-width:800px){
     header #title{
             align-items: center;
@@ -692,10 +677,19 @@ li a:hover:after{
         min-width: 300px;
     }
     .profile-card .profile-imgBx img{
-        max-width: 250px;
+        max-width: 300px;
     }
     .profile-card .profile-details{
-        min-width: 300px;
+        min-width: 300px;        
+    }
+    .profile-card .profile-details h3{
+        font-size: 1.4em;
+    }
+    .profile-card .profile-details h4{
+        font-size: 1em;
+    }
+    .profile-card .profile-details p{
+        font-size: 0.8em;
     }
     .profile-card:hover .profile-details{
         left: 300px;

@@ -37,3 +37,28 @@ login.onclick = function(){
 create.onclick = function(){
     ctContainer.classList.remove('signinForm')
 } 
+
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Empêche le rechargement de la page
+
+  const form = this;
+  const formData = new FormData(form);
+  const confirmationMessage = document.getElementById("confirmation-message");
+
+  fetch("https://formspree.io/f/mwpvgkow", {
+      method: "POST",
+      body: formData,
+      headers: {
+          "Accept": "application/json"
+      }
+  })
+  .then(response => {
+      if (response.ok) {
+          confirmationMessage.style.display = "block"; // Affiche le message de confirmation
+          form.reset(); // Réinitialise le formulaire après l'envoi
+      } else {
+          alert("Une erreur s'est produite, veuillez réessayer.");
+      }
+  })
+  .catch(error => console.error("Erreur :", error));
+});

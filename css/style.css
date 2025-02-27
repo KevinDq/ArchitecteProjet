@@ -638,6 +638,20 @@ li a:hover:after{
     font-weight: 500;
     color: #fff;
 }
+.contact-container .form #confirmation-message
+{
+    display: none;
+    background: #223243;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-weight: 300;
+    border-radius: 15px;
+    font-size: 1.3em;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35);
+    color : green;
+    font-weight: bold; 
+    padding: 10px;
+}
 /**/
 /*media queries*/
 /**/
